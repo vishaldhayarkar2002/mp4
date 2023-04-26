@@ -67,15 +67,15 @@ public class MainActivity extends AppCompatActivity {
 
     /*double Fence1_Latitude = 29.9262893;
     double Fence1_Longitude =  77.5179372;
-    String ClassRoomNumber1 = "Operating Systems Lab";
+    String ClassRoomNumber1 = "CSE";
 
     double Fence2_Latitude= 28.680847;
     double Fence2_Longitude =  77.0552608;
-    String ClassRoomNumber2 = "Computer Organization & Architecture";
+    String ClassRoomNumber2 = "IT";
 
     double Fence3_Latitude= 19.1146788;
     double Fence3_Longitude =  72.8854589;
-    String ClassRoomNumber3 = "Object Oriented Programming Using Java";*/
+    String ClassRoomNumber3 = "ECE";*/
 
 
 
