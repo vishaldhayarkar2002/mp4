@@ -65,17 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<ClassRoom_Location>arrayList_of_geofenceLatlng;
 
-    /*double Fence1_Latitude = 29.9262893;
-    double Fence1_Longitude =  77.5179372;
-    String ClassRoomNumber1 = "CSE";
 
-    double Fence2_Latitude= 28.680847;
-    double Fence2_Longitude =  77.0552608;
-    String ClassRoomNumber2 = "IT";
-
-    double Fence3_Latitude= 19.1146788;
-    double Fence3_Longitude =  72.8854589;
-    String ClassRoomNumber3 = "ECE";*/
 
 
 
@@ -91,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
     private GeofenceHelper geofenceHelper;
     private GeofencingClient geofencingClient;
-    private float GEOFENCE_RADIUS = 200;
+    private float GEOFENCE_RADIUS = 100;
     public static final String[] UserEnroll = new String[1];
 
 
@@ -252,10 +242,9 @@ public class MainActivity extends AppCompatActivity {
         geofenceHelper = new GeofenceHelper(MainActivity.this);
 
         arrayList_of_geofenceLatlng=new ArrayList<>();
-        arrayList_of_geofenceLatlng.add(new ClassRoom_Location(29.9262893,77.5179372,"Operating Systems Lab"));
-        arrayList_of_geofenceLatlng.add(new ClassRoom_Location(28.680847,77.0552608,"Computer Organization & Architecture"));
-        arrayList_of_geofenceLatlng.add(new ClassRoom_Location(19.1146788,72.8854589,"Object Oriented Programming Using Java"));
-        arrayList_of_geofenceLatlng.add(new ClassRoom_Location(26.8531697,80.9136721,"Logical Reasoning & Inequality"));
+        arrayList_of_geofenceLatlng.add(new ClassRoom_Location(16.84537359193647,74.60212907910814,"CCF"));
+        arrayList_of_geofenceLatlng.add(new ClassRoom_Location(37.4220936,-122.083922,"IT"));
+
 
         if (Build.VERSION.SDK_INT >= 29) {
             if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED) {
@@ -426,8 +415,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,Manifest.permission.ACCESS_BACKGROUND_LOCATION)!=PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
+
             // here to request the missing permissions, and then overriding
             //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
             //                                          int[] grantResults)
