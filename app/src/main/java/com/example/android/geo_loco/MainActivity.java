@@ -65,11 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<ClassRoom_Location>arrayList_of_geofenceLatlng;
 
-
-
-
-
-
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private TextView textViewLat;
@@ -121,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
             //saveUSerLocation();
         }
     }
-
     private void saveUSerLocation() {
         if (mUserLocation != null) {
             DatabaseReference ref = FirebaseDatabase.getInstance().getReference("UserLocation");
@@ -155,10 +149,13 @@ public class MainActivity extends AppCompatActivity {
 
                 textViewLat.setText(Double.toString(location.getLatitude()));
                 textViewLong.setText(Double.toString(location.getLongitude()));
-            }
 
+
+            }
         }
     };
+
+
     BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -222,8 +219,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 getUserDetail();
 
-
-
                 Toast.makeText(MainActivity.this, "Attendance Marked!", Toast.LENGTH_SHORT).show();
             }
         });
@@ -244,7 +239,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList_of_geofenceLatlng=new ArrayList<>();
         arrayList_of_geofenceLatlng.add(new ClassRoom_Location(16.84537359193647,74.60212907910814,"CCF"));
         arrayList_of_geofenceLatlng.add(new ClassRoom_Location(37.4220936,-122.083922,"IT"));
-
+        //16.846035529534355, 74.60099452290181
 
         if (Build.VERSION.SDK_INT >= 29) {
             if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED) {
@@ -271,13 +266,7 @@ public class MainActivity extends AppCompatActivity {
             addGeofence(ClassRoomNumber2,Fence2_Latitude,Fence2_Longitude);
             addGeofence(ClassRoomNumber3,Fence3_Latitude,Fence3_Longitude);*/
         }
-
-
-
     }
-
-
-
     protected void onStart() {
 
         super.onStart();
@@ -323,7 +312,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 
     private void startLocationUpdates() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
